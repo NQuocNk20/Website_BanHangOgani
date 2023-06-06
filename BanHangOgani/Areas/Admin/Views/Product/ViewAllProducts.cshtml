@@ -1,0 +1,164 @@
+﻿
+@model List<BanHangOgani.Models.Product>
+
+<h2>danh các sản phẩm</h2>
+
+<p>
+    <a asp-action="CreateProduct">
+        <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw"><i class="mdi mdi-plus-circle-outline"></i> create new</button>
+    </a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-warning">
+            <th>
+                ID
+            </th>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Thông tin sản phẩm
+            </th>
+            <th>
+                Gía
+            </th>
+            <th>
+                Đánh giá
+            </th>
+            <th>
+                Ảnh sản phẩm
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+            string cls = "table-warning";
+        }
+        @foreach (var item in Model)
+        {
+            i = i + 1;
+            cls = "table-info";
+            if (i % 2 == 0)
+            {
+                cls = "table-primary";
+            }
+            <tr class="@cls">
+                <td>
+                    @item.ProductId
+                </td>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                  @item.ProductDescription
+                </td>
+                <td>
+                    @item.ProductPrice
+                </td>
+                <td>
+                    @item.PorductRate
+                </td>
+                <td>
+                    <img class="product__details__pic__item--large mx-auto"
+                         src="~/Images/@item.ProductImgPath" alt="" style="border-radius: 5% !important; width: 150px!important; width: 60px!important; display: block !important">
+                </td>
+                <td>
+                    <a asp-action="EditProduct" asp-route-id="@item.ProductId">
+                        <button type="button" class="btn btn-gradient-primary btn-sm btn-icon-text">
+                            edit <i class="mdi mdi-file-check btn-icon-append"></i>
+                        </button>
+                    </a> |
+
+                    <a asp-action="DeleteProduct" asp-route-id="@item.ProductId">
+                        <button type="button" class="btn btn-gradient-danger btn-sm btn-icon-text">
+                            delete <i class="mdi mdi-delete-forever"></i>
+                        </button>
+                    </a>
+
+                    @* <a asp-action="details" asp-route-id="@item.productid">details</a> |*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!-- Phân trang -->
+@{
+    var pageNumber = ViewBag.PageNumber ?? 1;
+    var pageSize = ViewBag.PageSize ?? 8;
+    var totalItems = ViewBag.TotalItems ?? 0;
+    var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+    var showEllipsis = totalPages > 5;
+}
+
+
+<div class="pagination">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            @if (pageNumber > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ViewAllProducts", new { page = pageNumber - 1 })" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            }
+
+            @for (int j = 1; j <= 2 && j <= totalPages; j++)
+            {
+                if (j == pageNumber)
+                {
+                    <li class="page-item active"><a class="page-link" href="#">@j</a></li>
+                }
+                else
+                {
+                    <li class="page-item"><a class="page-link" href="@Url.Action("ViewAllProducts", new { page = j })">@j</a></li>
+                }
+            }
+
+            @if (pageNumber > 3 && showEllipsis)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+            }
+
+            @for (int j = Math.Max(pageNumber - 2, 3); j <= Math.Min(pageNumber + 2, totalPages); j++)
+            {
+                if (j == pageNumber)
+                {
+                    <li class="page-item active"><a class="page-link" href="#">@j</a></li>
+                }
+                else
+                {
+                    <li class="page-item"><a class="page-link" href="@Url.Action("ViewAllProducts", new { page = j })">@j</a></li>
+                }
+            }
+
+            @if (pageNumber < totalPages - 2 && showEllipsis)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+            }
+
+            @if (pageNumber < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ViewAllProducts", new { page = pageNumber + 1 })" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span></a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,65 @@
+﻿@model List<BanHangOgani.Models.Category>
+
+<h2>Danh các loại thư mục</h2>
+
+<p>
+    <a asp-action="CreateCategory">
+        <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw"><i class="mdi mdi-plus-circle-outline"></i> Create New</button>
+    </a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-warning">
+            <th>
+                ID
+            </th>
+            <th>
+                Tên Thể Loại
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+            string @cls = "table-warning";
+        }
+        @foreach (var item in Model)
+        {
+            i = i + 1;
+            cls = "table-info";
+            if (i % 2 == 0)
+            {
+                cls = "table-primary";
+            }
+            <tr class="@cls col">
+                <td>
+                    @item.CategoryId
+                </td>
+
+                <td>
+                    @item.Ncategory
+                </td>
+
+                <td>
+                    <a asp-action="EditCategory" asp-route-id="@item.CategoryId">
+                        <button type="button" class="btn btn-gradient-primary btn-sm btn-icon-text">
+                            Edit <i class="mdi mdi-file-check btn-icon-append"></i>
+                        </button>
+                    </a> |
+
+                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId">
+                        <button type="button" class="btn btn-gradient-danger btn-sm btn-icon-text">
+                            Delete <i class="mdi mdi-delete-forever"></i>
+                        </button>
+                    </a>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

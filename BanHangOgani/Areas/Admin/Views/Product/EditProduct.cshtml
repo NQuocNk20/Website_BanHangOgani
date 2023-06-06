@@ -1,0 +1,63 @@
+﻿@model BanHangOgani.Models.Product
+
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductId" />
+           @* <div class="form-group">
+                <label asp-for="ProductId" class="control-label">ID</label>
+                <input asp-for="ProductId" class="form-control" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label">Name</label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDescription" class="control-label">Description</label>
+                <input asp-for="ProductDescription" class="form-control" />
+                <span asp-validation-for="ProductDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPrice" class="control-label">Price</label>
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="PorductRate" class="control-label"></label>
+                <input asp-for="PorductRate" class="form-control" />
+                <span asp-validation-for="PorductRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductImgPath" class="control-label"></label>
+                <input asp-for="ProductImgPath" class="form-control" />
+                <span asp-validation-for="ProductImgPath" class="text-danger"></span>
+            </div>
+         
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewAllProducts">
+        <button type="button" class="btn btn-inverse-primary btn-fw"><i class="mdi mdi-home"></i> Back to List</button>
+    </a>
+</div>
+
+

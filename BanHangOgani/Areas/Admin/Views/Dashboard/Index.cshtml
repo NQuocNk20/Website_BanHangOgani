@@ -1,0 +1,29 @@
+﻿@model List<BanHangOgani.Models.Product>
+
+<h1>Admin  page</h1>
+
+<table width="80%" border="1">
+
+    <tr>
+        <td>ProductID </td>
+        <td> Product Name</td>
+        <td>Product Description</td>
+        <td>Product Price</td>
+        <td>Image</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId </td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductDescription</td>
+            <td>@item.ProductPrice</td>
+            <td>
+                <img src="~/img/@item.ProductImgPath" alt="" width="80px" height="80px">
+
+            </td>
+        </tr>
+    }
+
+</table>
