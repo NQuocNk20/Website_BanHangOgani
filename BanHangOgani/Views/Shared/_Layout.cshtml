@@ -1,404 +1,506 @@
-﻿
-
-
-<!DOCTYPE html>
-<html lang="zxx">
+﻿<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@ViewData["Title"] - BanHangOgani</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <title>Document</title>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="~/LayoutOgani/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="~/LayoutOgani/css/style.css" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/LayoutOrgani/Assets/css/style.css">
+
+    <!-- Mobile Responsive -->
+    <link rel="stylesheet" href="~/LayoutOrgani/Assets/css/responsive.css">
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="~/LayoutOrgani/Assets/css/bootstrap.min.css">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="~/LayoutOgani/img/logo.png" alt=""></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="~/LayoutOgani/img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li>
-                    <a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+    <!--
+        - #==========================/ HEADER /==========================#
+        -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nav-mobi">
+                <a class="navbar-brand" href="#">
+                    <img src="~/LayoutOrgani/Assets/imgs/logo.png" class="img-fuild" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
                     </ul>
-                </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+                    <form class="d-flex" role="search">
+                        <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn1 me-2 px-3" type="submit">Search</button>
+                        <span><i class="bi bi-basket2-fill"></i></span>
+                    </form>
+                </div>
+            </div>
         </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Humberger End -->
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="~/LayoutOgani/img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="~/LayoutOgani/img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li>
-                                <a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
     </header>
-    <!-- Header Section End -->
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                   
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit &amp; Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter &amp; Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya &amp; Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
+
+    <!--
+        - #==========================/ MAIN /==========================#
+        -->
+    <!-- <section class="main"> -->
+    <div class="containers h-100">
+        <div class="row">
+            <div id="slide">
+                <div class="item background-image1">
+                    <div class="content">
+                        <div class="name">Apple</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
                     </div>
                 </div>
-
-
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
+                <div class="item background-image2">
+                    <div class="content">
+                        <div class="name">Mango</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
                     </div>
-                    <div class="hero__item set-bg">
-                        <img src="~/LayoutOgani/img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
+                </div>
+                <div class="item background-image3">
+                    <div class="content">
+                        <div class="name">Fruit Fresh</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+                <div class="item background-image4">
+                    <div class="content">
+                        <div class="name">Strawberry</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+                <div class="item background-image5" >
+                    <div class="content">
+                        <div class="name">Lemonade</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+                <div class="item background-image6">
+                    <div class="content">
+                        <div class="name">Papaya</div>
+                        <div class="des">Vietnamese cuisine delights with its vibrant flavors and aromatic spices.</div>
+                        <button>See more</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-    <!-- Categories Section Begin -->
-    <section class="categories">
-        <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg">
-                            <img src="~/LayoutOgani/img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg">
-                            <img src="~/LayoutOgani/img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg">
-                            <img src="~/LayoutOgani/img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg">
-                            <img src="~/LayoutOgani/img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg">
-                            <img src="~/LayoutOgani/img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Categories Section End -->
-    <!-- Featured Section Begin -->
-    <section class="featured spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Featured Product</h2>
-                    </div>
-                    <div class="featured__controls">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row featured__filter">
-                @RenderBody();
-            </div>
-        </div>
-    </section>
-    <!-- Featured Section End -->
-
-    <!-- Banner Begin -->
-    <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="~/LayoutOgani/img/banner/banner-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="~/LayoutOgani/img/banner/banner-2.jpg" alt="">
-                    </div>
-                </div>
+            <div class="buttons">
+                <button id="prev"><i class="bi bi-caret-left-fill"></i></button>
+                <button id="next"><i class="bi bi-caret-right-fill"></i></button>
             </div>
         </div>
     </div>
-    <!-- Banner End -->
-
-    <!-- Blog Section Begin -->
-    <section class="from-blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title from-blog__title">
-                        <h2>From The Blog</h2>
-                    </div>
+    <!-- </section> -->
+    <!-- <section class="main py-5">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-6 py-5">
+                    <p class="m-0">Organic Products</p>
+                    <h1>Fresh Organic</h1>
+                    <div class="line my-4"></div>
+                    <p>Organic food is food and drinks produced by methods complying with the standards of organic
+                        farming.
+                        Standards vary worldwide, but organic farming features practices that cycle resource.
+                    </p>
+                    <button class="mbtn1 mt-4">Read More</button>
+                    <button class="mbtn2">Shop Now</button>
                 </div>
             </div>
+        </div>
+    </section> -->
+    <!--
+        - #==========================/ WELCOME /==========================#
+        -->
+    <section class="welcome text-center pb-5">
+        <div class="container py-5">
+            <div class="row py-5 text-white">
+                <div class="col-lg-6 mx-auto">
+                    <p>Green Agriculture</p>
+                    <h1>Welcome to Organic</h1>
+                    <div class="line2 my-4"></div>
+                    <p>
+                        We call it ultimate because we simply believe every website We call it
+                        ultimate because we simply believe every website needs to be well presented at the
+                    </p>
+                </div>
+            </div>
+
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="~/LayoutOgani/img/blog/blog-1.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                <div class="col-lg-4">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-shop-window"></i></span>
+                            <h2>Always Fresh</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="~/LayoutOgani/img/blog/blog-2.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+
+                <div class="col-lg-4">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-box-seam"></i></span>
+                            <h2>Fast Delivery</h2>
+                            <p>Lorem ipsum dolor sit.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="~/LayoutOgani/img/blog/blog-3.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Visit the clean farm in the US</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+
+                <div class="col-lg-4">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-gift"></i></span>
+                            <h2>100% Organic</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
+
+
+    <!--
+        - #==========================/ PRODUCT /==========================#
+        -->
+    <section class="product bg-light">
+        <div class="container">
+            <div class="row py-5 text-center">
+                <div class="col-lg-6 mx-auto">
+                    <p class="m-0">Green Agriculture</p>
+                    <h1>Our Best Products</h1>
+                    <div class="line my-4"></div>
+                    <p>
+                        We call it ultimate because we simply believe every website We call it
+                        ultimate because we simply believe every website needs to be well presented at the
+                    </p>
+                </div>
+            </div>
+
+            <div class="row my-4">
+               @RenderBody();
+            </div>
+
+
+
+         @*   <div class="row text-center py-5">
+                <div class="col-lg-6 m-auto">
+                    <button class="mbtn1">Read More</button>
+                </div>
+            </div>*@
+        </div>
+    </section>
+
+
+    <!--
+        - #==========================/ DISCOUNT /==========================#
+        -->
+    <section class="discount py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-10 m-auto text-center">
+                    <h2>
+                        <span><i class="bi bi-cash-coin"></i></span>
+                        Discount Coupon For -20%: WELCOMEORGANI
+                    </h2>
+                </div>
+                <div class="col-lg-2 m-auto">
+                    <button class="dbtn">More Offer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+        - #==========================/ STORE /==========================#
+        -->
+    <section class="store text-center pb-5">
+        <div class="container py-5">
+            <div class="row py-5 text-white">
+                <div class="col-lg-6 mx-auto">
+                    <p>Green Agriculture</p>
+                    <h1>Welcome to Organic</h1>
+                    <div class="line2 my-4"></div>
+                    <p>
+                        We call it ultimate because we simply believe every website We call it
+                        ultimate because we simply believe every website needs to be well presented at the
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-truck"></i></span>
+                            <h4 class="py-2">Free Shipping</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-patch-check"></i></span>
+                            <h4 class="py-2">Organic Certified</h4>
+                            <p>Lorem ipsum dolor sit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-wallet"></i></span>
+                            <h4 class="py-2">Secure Payment</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card py-3">
+                        <div class="card-body">
+                            <span><i class="bi bi-people"></i></span>
+                            <h4 class="py-2">Friendly</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        - #==========================/ SELLER /==========================#
+        -->
+    <section class="seller bg-light py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>New Arrivals</h1>
+                    <div class="line2 my-4"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/lemon.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Lemon Fresh</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/lemon.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Lemon Fresh</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row py-2">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/lemon.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Lemon Fresh</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/strawnb.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Strawberry</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row py-2">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/red-apple.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Red Apple</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/Pom.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Red Pom</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row py-2">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/orange.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Fresh Orange</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="~/LayoutOrgani/Assets/imgs/mint.jpg" class="card-img-top" alt="Hình ảnh">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <p>Rate:<span class="selstart"> 4.5</span></p>
+                                        <h5 class="card-title">Mint</h5>
+                                        <p class="per1">2 x 454g / 16oz</p>
+                                        <h4 class="card-text">Giá: $10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+        - #==========================/ Footer /==========================#
+        -->
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="~/LayoutOgani/img/logo.png" alt=""></a>
+                            <a href="./index.html"><img src="~/LayoutOrgani/Assets/imgs/logo.png" alt=""></a>
                         </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                        <ul class="mt-3">
+                            <li>Address: VietNam, Ho Chi Minh city</li>
+                            <li>Phone: +84 949272244</li>
+                            <li>Email: quoc.nng@gmail.com</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer__widget">
-                        <h6>Useful Links</h6>
+                        <h5>Useful Links</h5>
                         <ul>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">About Our Shop</a></li>
@@ -407,29 +509,23 @@
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Our Sitemap</a></li>
                         </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <h5 class="text-center">Join Our Newsletter Now</h5>
+                        <div class="group-email">
+                            <p>Get E-mail updates about our special offers.</p>
+                            <form action="#">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit" class="site-btn">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="footer__widget__social py-3 mt-2">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-github"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -439,28 +535,31 @@
                     <div class="footer__copyright">
                         <div class="footer__copyright__text">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright ©
+                                <script>document.write(new Date().getFullYear());</script>2023 All rights reserved |
+                                This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#">QUOC NGN</a>
                             </p>
                         </div>
-                        <div class="footer__copyright__payment"><img src="~/LayoutOgani/img/payment-item.png" alt=""></div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
-    <!-- Js Plugins -->
-    <script src="~/LayoutOgani/js/jquery-3.3.1.min.js"></script>
-    <script src="~/LayoutOgani/js/bootstrap.min.js"></script>
-    <script src="~/LayoutOgani/js/jquery.nice-select.min.js"></script>
-    <script src="~/LayoutOgani/js/jquery-ui.min.js"></script>
-    <script src="~/LayoutOgani/js/jquery.slicknav.js"></script>
-    <script src="~/LayoutOgani/js/mixitup.min.js"></script>
-    <script src="~/LayoutOgani/js/owl.carousel.min.js"></script>
-    <script src="~/LayoutOgani/js/main.js"></script>
 
+    <!--
+      - #==========================/ Scroll to top /==========================#
+      -->
+    <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+    </button>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="~/LayoutOrgani/Assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS  -->
+    <script src="~/LayoutOrgani/Assets/js/main.js"></script>
 </body>
 
 </html>

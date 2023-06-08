@@ -6,7 +6,24 @@
 @model List<Product>
 @foreach(var item in Model)
 {
-    <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+    <div class="col-lg-3 mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="start">
+                    <p>Rate:<span> @item.PorductRate</span></p>
+                </div>
+                <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
+            </div>
+            <div class="card-body">
+                <div class="line"></div>
+                <h4 class="py-2">@item.ProductName</h4>
+                <h3>Price:$ @item.ProductPrice</h3>
+                <button class="btnc my-3">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+
+  @*  <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
         <div class="featured__item">
             <div class="featured__item__pic set-bg" data-setbg="@Url.Content("../Images/" + item.ProductImgPath)">
                 <ul class="featured__item__pic__hover">
@@ -21,7 +38,9 @@
                 <p>Rate: @item.PorductRate</p>
             </div>
         </div>
-    </div>
+    </div>*@
+
+
 }
 
 
@@ -39,7 +58,7 @@
 }
 
 
-<div class="pagination product__pagination">
+<div class="pagination product__pagination mt-5">
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             @if (pageNumber > 1)
