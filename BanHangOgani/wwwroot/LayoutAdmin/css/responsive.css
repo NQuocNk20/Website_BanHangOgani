@@ -1,0 +1,35 @@
+@media only screen and (max-width: 71.25em) {
+    nav span i {
+        display: none;
+    }
+    #navbarSupportedContent {
+        background: #fff;
+    }
+
+    
+    nav .navbar-nav ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .product .card {
+        margin-top: 2rem;
+    }
+    /* ====== WELCOME ====== */
+    .welcome .card {
+        margin-top: 1rem;
+    }
+
+    /* ====== DISCOUNT ====== */
+    .discount button {
+        margin-top: 2rem;
+    }
+    /* ====== PRODUCT ====== */
+    .product h4{
+        font-size: 2rem;
+    }
+    /* ====== STORE ====== */
+    .store .card {
+        margin-top: 1rem;
+    }
+}

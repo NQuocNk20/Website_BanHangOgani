@@ -2,21 +2,21 @@
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+hello my name is
 @model List<Product>
 @foreach(var item in Model)
 {
     <div class="col-lg-3 mt-3">
         <div class="card">
-            <div class="card-header">
-                <div class="start">
-                    <p>Rate:<span> @item.PorductRate</span></p>
-                </div>
+            <div class="card-header">     
                 <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
             </div>
             <div class="card-body">
                 <div class="line"></div>
-                <h4 class="py-2">@item.ProductName</h4>
+                <h4 class="pt-2">@item.ProductName</h4>
+                <div class="start">
+                    <p>Rate:<span> @item.PorductRate</span></p>
+                </div>
                 <h3>Price:$ @item.ProductPrice</h3>
                 <button class="btnc my-3">ADD TO CART</button>
             </div>
@@ -71,42 +71,16 @@
                 </li>
             }
 
-            @for (int j = 1; j <= 2 && j <= totalPages; j++)
+            @for (int j = Math.Max(1, pageNumber - 2); j <= Math.Min(pageNumber + 2, totalPages); j++)
             {
                 if (j == pageNumber)
                 {
-                    <li class="page-item active"><a class="page-link" href="#">@j</a></li>
+                    <li class="page-item active"><a class="page-link">@j</a></li>
                 }
                 else
                 {
                     <li class="page-item"><a class="page-link" href="@Url.Action("Index", new { page = j })">@j</a></li>
                 }
-            }
-
-            @if (pageNumber > 3 && showEllipsis)
-            {
-                <li class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-            }
-
-            @for (int j = Math.Max(pageNumber - 2, 3); j <= Math.Min(pageNumber + 2, totalPages); j++)
-            {
-                if (j == pageNumber)
-                {
-                    <li class="page-item active"><a class="page-link" href="#">@j</a></li>
-                }
-                else
-                {
-                    <li class="page-item"><a class="page-link" href="@Url.Action("Index", new { page = j })">@j</a></li>
-                }
-            }
-
-            @if (pageNumber < totalPages - 2 && showEllipsis)
-            {
-                <li class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
             }
 
             @if (pageNumber < totalPages)

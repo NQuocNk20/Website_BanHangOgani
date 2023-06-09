@@ -1,92 +1,79 @@
 ﻿
 @model List<BanHangOgani.Models.Product>
 
-<h2>danh các sản phẩm</h2>
+@{
+    ViewData["Title"] = "View All Products";
+}
 
-<p>
-    <a asp-action="CreateProduct">
-        <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw"><i class="mdi mdi-plus-circle-outline"></i> create new</button>
+
+
+
+    <a asp-action="CreateProduct" style="margin: 40px 0 0 30px">
+        <button>
+            <span><ion-icon name="add-outline"></ion-icon> create new</span>
+            <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0" />
+            </svg>
+        </button>
     </a>
-</p>
+
+
+
+
+
 <p>@TempData["Message"]</p>
-<table class="table table-bordered">
-    <thead>
-        <tr class="table-warning">
-            <th>
-                ID
-            </th>
-            <th>
-                Tên sản phẩm
-            </th>
-            <th>
-                Thông tin sản phẩm
-            </th>
-            <th>
-                Gía
-            </th>
-            <th>
-                Đánh giá
-            </th>
-            <th>
-                Ảnh sản phẩm
-            </th>
-            <th>
-                Action
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            int i = 0;
-            string cls = "table-warning";
-        }
+<div class="responsive-table">
+    <h1>Danh các sản phẩm</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                @*<th>Category</th>*@
+                <th>Rate</th>       
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+             
         @foreach (var item in Model)
         {
-            i = i + 1;
-            cls = "table-info";
-            if (i % 2 == 0)
-            {
-                cls = "table-primary";
-            }
-            <tr class="@cls">
-                <td>
-                    @item.ProductId
-                </td>
-                <td>
-                    @item.ProductName
-                </td>
-                <td>
-                  @item.ProductDescription
-                </td>
-                <td>
-                    @item.ProductPrice
-                </td>
-                <td>
-                    @item.PorductRate
-                </td>
-                <td>
-                    <img class="product__details__pic__item--large mx-auto"
-                         src="~/Images/@item.ProductImgPath" alt="" style="border-radius: 5% !important; width: 150px!important; width: 60px!important; display: block !important">
-                </td>
-                <td>
-                    <a asp-action="EditProduct" asp-route-id="@item.ProductId">
-                        <button type="button" class="btn btn-gradient-primary btn-sm btn-icon-text">
-                            edit <i class="mdi mdi-file-check btn-icon-append"></i>
-                        </button>
-                    </a> |
+          
+                <tr class=" tr1">
+                    <td data-label='No'><span class="deactive"># @item.ProductId</span></td>
+                    <td data-label='Name'>@item.ProductName</td>
+                    <td data-label='Image'><img src="~/Images/@item.ProductImgPath" alt=""></td>
+         @*       <td data-label='Category'>Programming</td>*@
+                    <td data-label='Description'>@item.ProductDescription</td>
+                    <td data-label='Price'>$ @item.ProductPrice</td>
+                    <td data-label='Rate'>@item.PorductRate</td>
+                <td data-label='Action'>
+                    <div>
+                            <a asp-action="EditProduct" asp-route-id="@item.ProductId">
+                                <span class="edit">
+                                    edit <ion-icon name="eyedrop-outline"></ion-icon>
+                                </span>
+                            </a> |
 
-                    <a asp-action="DeleteProduct" asp-route-id="@item.ProductId">
-                        <button type="button" class="btn btn-gradient-danger btn-sm btn-icon-text">
-                            delete <i class="mdi mdi-delete-forever"></i>
-                        </button>
-                    </a>
-
-                    @* <a asp-action="details" asp-route-id="@item.productid">details</a> |*@
+                            <a asp-action="DeleteProduct" asp-route-id="@item.ProductId">
+                                <span class="delete">
+                                    delete <ion-icon name="trash-bin-outline"></ion-icon>
+                                </span>
+                            </a>
+                    </div>
                 </td>
             </tr>
-        }
-    </tbody>
-</table>
+        }         
+        </tbody>
+    </table>
+</div>
+
+
+ 
 
 
 <!-- Phân trang -->

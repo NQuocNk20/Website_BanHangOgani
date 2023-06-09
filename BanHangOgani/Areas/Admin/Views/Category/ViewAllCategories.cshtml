@@ -1,65 +1,64 @@
 ﻿@model List<BanHangOgani.Models.Category>
+@{
+    ViewData["Title"] = "View All Category";
+}
 
 <h2>Danh các loại thư mục</h2>
 
-<p>
-    <a asp-action="CreateCategory">
-        <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw"><i class="mdi mdi-plus-circle-outline"></i> Create New</button>
-    </a>
-</p>
+<a asp-action="CreateCategory" style="margin: 40px 0 0 30px">
+    <button>
+        <span><ion-icon name="add-outline"></ion-icon> create new</span>
+        <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0" />
+        </svg>
+    </button>
+</a>
+
+
 <p>@TempData["Message"]</p>
-<table class="table table-bordered">
-    <thead>
-        <tr class="table-warning">
-            <th>
-                ID
-            </th>
-            <th>
-                Tên Thể Loại
-            </th>
-            <th>
-                Action
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            int i = 0;
-            string @cls = "table-warning";
-        }
-        @foreach (var item in Model)
-        {
-            i = i + 1;
-            cls = "table-info";
-            if (i % 2 == 0)
-            {
-                cls = "table-primary";
-            }
-            <tr class="@cls col">
-                <td>
-                    @item.CategoryId
-                </td>
-
-                <td>
-                    @item.Ncategory
-                </td>
-
-                <td>
-                    <a asp-action="EditCategory" asp-route-id="@item.CategoryId">
-                        <button type="button" class="btn btn-gradient-primary btn-sm btn-icon-text">
-                            Edit <i class="mdi mdi-file-check btn-icon-append"></i>
-                        </button>
-                    </a> |
-
-                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId">
-                        <button type="button" class="btn btn-gradient-danger btn-sm btn-icon-text">
-                            Delete <i class="mdi mdi-delete-forever"></i>
-                        </button>
-                    </a>
 
 
-                </td>
+<p>@TempData["Message"]</p>
+<div class="responsive-table">
+    <h1>Danh các sản phẩm</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Category</th>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+
+                <tr class=" tr1">
+                    <td data-label='No'><span class="deactive"># @item.CategoryId</span></td>
+                    <td data-label='Name'>@item.Ncategory</td>
+                    <td data-label='Action'>
+                        <div>
+                            <a asp-action="EditCategory" asp-route-id="@item.CategoryId">
+                                <span class="edit">
+                                    edit <ion-icon name="eyedrop-outline"></ion-icon>
+                                </span>
+                            </a> |
+
+                            <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId">
+                                <span class="delete">
+                                    delete <ion-icon name="trash-bin-outline"></ion-icon>
+                                </span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900;1000&display=swap');
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
@@ -8,9 +8,9 @@
     border-style: none;
     font-family: 'Cairo', sans-serif;
 }
-
-body {
+body{
     overflow-x: hidden;
+    background: red;
 }
 /*-----------------------------------*\
             #HEADER
@@ -37,37 +37,37 @@ nav {
     margin: 10px 0;
 }
 
-    .nav-item a {
-        position: relative;
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-right: 15px;
-        letter-spacing: .5px;
-        font-size: 18px;
-        padding: 0 10px;
-    }
+.nav-item a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 15px;
+    letter-spacing: .5px;
+    font-size: 18px;
+    padding: 0 10px;
+}
 
-        .nav-item a:hover {
-            color: #7fad39;
-            /* font-weight: bold; */
-        }
+.nav-item a:hover {
+    color: #7fad39;
+    /* font-weight: bold; */
+}
 
-        .nav-item a::after {
-            content: "";
-            position: absolute;
-            background-color: #7fad39;
-            height: 4px;
-            width: 0;
-            left: 0;
-            bottom: -10px;
-            transition: .3s;
-        }
+.nav-item a::after {
+    content: "";
+    position: absolute;
+    background-color: #7fad39;
+    height: 4px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: .3s;
+}
 
-        .nav-item a:hover::after {
-            width: 100%;
-        }
+.nav-item a:hover::after {
+    width: 100%;
+}
 
 .navbar-brand {
     height: 50px;
@@ -96,9 +96,9 @@ nav {
     transition: all .4s;
 }
 
-    .btn1:hover {
-        background-color: #6c8d3a;
-    }
+.btn1:hover {
+    background-color: #6c8d3a;
+}
 
 .bi-basket2-fill {
     font-size: 30px;
@@ -109,19 +109,19 @@ nav {
     line-height: 80px;
 }
 
-    .bi-basket2-fill:hover {
-        color: #7fad39;
-    }
+.bi-basket2-fill:hover {
+    color: #7fad39;
+}
 
 .navbar-toggler {
     font-size: 25px;
     color: #000;
 }
 
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: none;
-    }
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
 
 /*-----------------------------------*\
             #MAIN
@@ -133,7 +133,6 @@ nav {
     overflow: hidden;
     position: relative;
 }
-
 main .container {
     overflow: hidden;
 }
@@ -159,95 +158,94 @@ main .container {
     box-shadow: 0 30px 50px #505050;
 }
 
-    .item:nth-child(1),
-    .item:nth-child(2) {
-        left: 0;
-        top: 0;
-        transform: translate(0, 0);
-        border-radius: 0;
-        width: 100%;
-        height: 100%;
-        box-shadow: none;
-    }
+.item:nth-child(1),
+.item:nth-child(2) {
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
 
-    .item:nth-child(3) {
-        left: 50%;
-    }
+.item:nth-child(3) {
+    left: 50%;
+}
 
-    .item:nth-child(4) {
-        left: calc(50% + 220px);
-    }
+.item:nth-child(4) {
+    left: calc(50% + 220px);
+}
 
-    .item:nth-child(5) {
-        left: calc(50% + 440px);
-    }
+.item:nth-child(5) {
+    left: calc(50% + 440px);
+}
 
-    .item:nth-child(n+6) {
-        left: calc(50% + 660px);
-        opacity: 0;
-    }
+.item:nth-child(n+6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
 
-    .item .content {
-        position: absolute;
-        top: 50%;
-        left: 10%;
-        width: 30rem;
-        height: 15rem;
-        text-align: left;
-        padding: 20px;
-        color: #333;
-        transform: translate(0, -50%);
-        display: none;
-        /* From https://css.glass */
-        background: rgba(170, 170, 170, 0.219);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 30rem;
+    height: 15rem;
+    text-align: left;
+    padding: 20px;
+    color: #333;
+    transform: translate(0, -50%);
+    display: none;
+    /* From https://css.glass */
+    background: rgba(170, 170, 170, 0.219);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    .item:nth-child(2) .content {
-        display: block;
-        z-index: 11111;
-    }
+.item:nth-child(2) .content {
+    display: block;
+    z-index: 11111;
+}
 
-    .item .name {
-        font-size: 40px;
-        color: #6c8d3a;
-        font-weight: bold;
-        opacity: 0;
-        animation: showcontent 1s ease-in-out 1 forwards
-    }
+.item .name {
+    font-size: 40px;
+    color: #6c8d3a;
+    font-weight: bold;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards
+}
 
-    .item .des {
-        margin: 20px 0;
-        opacity: 0;
-        font-size: 20px;
-        font-weight: bold;
-        animation: showcontent 1s ease-in-out 0.3s 1 forwards
-    }
+.item .des {
+    margin: 20px 0;
+    opacity: 0;
+    font-size: 20px;
+    font-weight: bold;
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards
+}
 
-    .item button {
-        padding: 10px 50px;
-        color: #fff;
-        font-weight: 500;
-        border: none;
-        opacity: 0;
-        border-radius: 10px 0 10px 0;
-        background-color: #6c8d3a;
-        animation: showcontent 1s ease-in-out 0.6s 1 forwards;
-        transition: .4s;
-    }
-
-        .item button:hover {
-            border: 2px solid #6c8d3a;
-            background-color: transparent;
-            color: #6c8d3a;
-            scale: 110%;
-            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-            border-radius: 0 20px 0 20px;
-        }
+.item button {
+    padding: 10px 50px;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    opacity: 0;
+    border-radius: 10px 0 10px 0;
+    background-color: #6c8d3a;
+    animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+    transition: .4s;
+}
+.item button:hover {
+    border: 2px solid #6c8d3a;
+    background-color: transparent;
+    color: #6c8d3a;
+    scale: 110%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 0 20px 0 20px;
+}
 
 @keyframes showcontent {
     from {
@@ -271,50 +269,24 @@ main .container {
     display: inline;
 }
 
-    .buttons button {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 1px solid #555;
-        transition: 0.5s;
-    }
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    transition: 0.5s;
+}
 
-        .buttons button:hover {
-            background-color: #bac383;
-        }
+.buttons button:hover {
+    background-color: #bac383;
+}
 
 .line {
     height: 6px;
     width: 30%;
     background: #7fad39;
     display: inline-block;
-}
-
-
-.background-image1 {
-    background-image: url('../imgs/red-apple.jpg');
-    /* Các thuộc tính CSS khác cho background image */
-}
-
-.background-image2 {
-    background-image: url('../imgs/manngo.jpg');
-}
-
-.background-image3 {
-    background-image: url('../imgs/m1.jpg');
-}
-
-.background-image4 {
-    background-image: url('../imgs/strawnb.jpg');
-}
-
-.background-image5 {
-    background-image: url('../imgs/lemon.jpg');
-}
-
-.background-image6 {
-    background-image: url('../imgs/papaya.jpg');
-}
+} 
 
 /*-----------------------------------*\
             #WELCOME
@@ -364,15 +336,16 @@ main .container {
     font-size: 18px;
 }
 
-    .start span {
-      /*  text-align: end;*/
-        color: orange;
-        font-weight: bold;
-    }
-
+.start span {
+    color: orange;
+    font-weight: bold;
+}
+.start p {
+    margin: unset;
+    font-weight: lighter;
+}
 .card-custom {
     width: 18rem; /* 300px */
-    height: 22rem; /* 400px */
 }
 
 .product .card {
@@ -396,35 +369,35 @@ main .container {
     max-height: 250px;
 }
 
-    .product .card-header img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        object-fit: cover;
-        background-position: center;
-        transition: scale 400ms;
-    }
+.product .card-header img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    background-position: center;
+    transition: scale 400ms;
+}
 
-    .product .card-header:hover img {
-        scale: 120%;
-    }
+.product .card-header:hover img {
+    scale: 120%;
+}
 
 .product .card-body {
     border: 1px solid rgb(175, 172, 172);
     border: none;
 }
 
-    .product .card-body h4 {
-        font-weight: 600;
-        transition: .25s;
-    }
+.product .card-body h4 {
+    font-weight: 600;
+    transition: .25s;
+}
 
-    .product .card-body:hover h4 {
-        color: #6c8d3a;
-    }
+.product .card-body:hover h4 {
+    color: #6c8d3a;
+}
 
 .btnc {
     height: 50px;
@@ -438,14 +411,14 @@ main .container {
     transition: all .4s;
 }
 
-    .btnc:hover {
-        border: 2px solid #6c8d3a;
-        background-color: #fff;
-        color: #6c8d3a;
-        scale: 105%;
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-        border-radius: 10px;
-    }
+.btnc:hover {
+   border: 2px solid #6c8d3a;
+    background-color: #fff;
+    color: #6c8d3a;
+    scale: 105%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 10px;
+}
 
 /*-----------------------------------*\
             #DISCOUNT
@@ -469,9 +442,9 @@ main .container {
     transition: all .4s;
 }
 
-    .dbtn:hover {
-        background-color: wheat;
-    }
+.dbtn:hover {
+    background-color: wheat;
+}
 
 /*-----------------------------------*\
             #STORE
@@ -512,11 +485,11 @@ main .container {
     background-color: #7fad39;
 }
 
-    .store .card:hover i,
-    .store .card:hover h4,
-    .store .card:hover p {
-        color: #fff;
-    }
+.store .card:hover i,
+.store .card:hover h4,
+.store .card:hover p {
+    color: #fff;
+}
 
 .store i {
     font-size: 45px;
@@ -573,20 +546,20 @@ main .container {
     font-size: 18px;
 }
 
-    .footer ul {
-        list-style: none;
-    }
+.footer ul {
+    list-style: none;
+}
 
-        .footer ul li a {
-            list-style: none;
-            text-decoration: none;
-            color: #fff;
-            transition: .4s;
-        }
+.footer ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    transition: .4s;
+}
 
-        .footer ul > li:hover > a {
-            color: #333f21;
-        }
+.footer ul>li:hover>a {
+    color: #333f21;
+}
 
 .footer__widget__social i {
     font-size: 35px;
@@ -595,7 +568,7 @@ main .container {
     transition: .4s;
 }
 
-.footer__widget__social > a:hover > i {
+.footer__widget__social>a:hover>i {
     color: #333f21;
 }
 
@@ -607,33 +580,30 @@ main .container {
     border-radius: 50px 0 50px 0;
 }
 
-    .group-email p {
-        font-weight: bold;
-        color: #6c8d3a;
-    }
+.group-email p {
+    font-weight: bold;
+    color: #6c8d3a;
+}
 
-    .group-email input {
-        outline: none;
-        text-align: center;
-        width: 70%;
-        border-bottom: 1px solid #333f21;
-    }
+.group-email input {
+    outline: none;
+    text-align: center;
+    width: 70%;
+    border-bottom: 1px solid #333f21;
+}
 
-    .group-email .site-btn {
-        background-color: #6c8d3a;
-        color: #fff;
-        width: 100px;
-        border-radius: 20px 0 20px 0;
-    }
+.group-email .site-btn {
+    background-color: #6c8d3a;
+    color: #fff;
+    width: 100px;
+    border-radius: 20px 0 20px 0;
+}
 
 .footer__copyright {
     border-top: 1px solid #fff;
     text-align: center;
 }
 
-/*-----------------------------------*\
-            #Scroll Top
-\*-----------------------------------*/
 .back-to-top-btn {
     display: none;
     position: fixed;
@@ -649,29 +619,27 @@ main .container {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-    .back-to-top-btn::before {
-        content: 'Top';
-        position: absolute;
-        border: none;
-        background-color: transparent;
-        right: 0;
-        left: 0;
-        top: -100%;
-        font-size: 30px;
-        font-weight: 600;
-        transition: .3s;
-    }
+.back-to-top-btn::before {
+    content: 'Top';
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    right: 0;
+    left: 0;
+    top: -100%;
+    font-size: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+.back-to-top-btn:hover::before {
+    transform: scale(1.3);
+    font-weight: bold;
+}
+.back-to-top-btn:hover i{
+    color: #7fad39;
+}
 
-    .back-to-top-btn:hover::before {
-        transform: scale(1.3);
-        font-weight: bold;
-    }
-
-    .back-to-top-btn:hover i {
-        color: #7fad39;
-    }
-
-    .back-to-top-btn i {
-        font-size: 50px;
-        transition: .4s;
-    }
+.back-to-top-btn i {
+    font-size: 50px;
+    transition: .4s;
+}

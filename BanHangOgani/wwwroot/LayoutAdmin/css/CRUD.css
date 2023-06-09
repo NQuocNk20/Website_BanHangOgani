@@ -1,0 +1,87 @@
+
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.row {
+    margin-top: 20px;
+    width: 40%;
+    margin-left: 10%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label.control-label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    textarea:focus,
+    select:focus {
+        outline: none;
+        border-color: #7F53AC;
+    }
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #7F53AC;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+.btn-inverse-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #7F53AC;
+    color: #7F53AC;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+    .btn-inverse-primary:hover {
+        background-color: #7F53AC;
+        color: #fff;
+    }
+
+.text-danger {
+    color: red;
+    font-size: 14px;
+}
+.btnBack {
+    margin-left: 10%;
+}

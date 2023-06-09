@@ -1,5 +1,8 @@
 ﻿@model BanHangOgani.Models.Product
 
+@{
+    ViewData["Title"] = "Edit Product";
+}
 
 <h4>Product</h4>
 <hr />
@@ -56,7 +59,7 @@
 
 <div>
     <a asp-action="ViewAllProducts">
-        <button type="button" class="btn btn-inverse-primary btn-fw"><i class="mdi mdi-home"></i> Back to List</button>
+        <button type="button" class="btnBack">Back to List</button>
     </a>
 </div>
 
