@@ -194,46 +194,47 @@
     <!--
         - #==========================/ PRODUCT /==========================#
         -->
-    <section class="product bg-light">
+<section class="product bg-light">
         <div class="container">
-            <div class="row py-5 text-center">
-                <div class="col-lg-6 mx-auto">
+            <div class="row py-2 text-center">
+                <div class="col-lg-9 mx-auto">
                     <p class="m-0">Green Agriculture</p>
                     <h1>Our Best Products</h1>
                     <div class="line my-4"></div>
-                  @*  <p>
-                        We call it ultimate because we simply believe every website We call it
-                        ultimate because we simply believe every website needs to be well presented at the
-                    </p>*@
-                    <div class="row justify-content-center mt-5">
-                        <div class="col-6">
-                            <div class="dropdown custom-dropdown">
-                                <button class="btn btn-primary dropdown-toggle btnFilter" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Select a Product
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Product 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 3</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 4</a></li>
-                                </ul>
-                            </div>
+                </div>            
+
+                <div class="box col-lg-3 mt-5">
+                    <div class="dropdown">
+                        Category
+                        <span class="left-icon"></span>
+                        <span class="right-icon"></span>
+                        <div class="items">
+                            @foreach (var item in cateMenu.GetAll())
+                            {
+                                int index = cateMenu.GetAll().IndexOf(item) + 1;
+                                <a href="#" style="--i:@index"><span></span>@item.Ncategory</a>
+                            }
                         </div>
                     </div>
                 </div>
+
+ádasd
+
+                    <script>
+                        const dropdown = document.querySelector('.dropdown');
+
+                        dropdown.addEventListener('click', () => {
+                            dropdown.classList.toggle('active');
+                        })
+                    </script>
+
+
             </div>
 
             <div class="row my-4">
-               @RenderBody();
+                @RenderBody();
             </div>
 
-
-
-         @*   <div class="row text-center py-5">
-                <div class="col-lg-6 m-auto">
-                    <button class="mbtn1">Read More</button>
-                </div>
-            </div>*@
         </div>
     </section>
 
