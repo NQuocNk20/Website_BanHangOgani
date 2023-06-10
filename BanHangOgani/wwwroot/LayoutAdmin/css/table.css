@@ -123,6 +123,10 @@ td span {
         background-color: rgb(230,111,81);
     }
 
+    td span.cate {
+        background-color: #ffbe0b;
+    }
+
     td span.delete {
         background-color: #FF003F;
     }

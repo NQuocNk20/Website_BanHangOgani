@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using BanHangOgani.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace BanHangOgani.Controllers
 {
@@ -11,30 +12,15 @@ namespace BanHangOgani.Controllers
         private ProductDAO _productDAO = new ProductDAO();
         private IProductRepository _productRepository;
 
+        QuanLiBanHangContext db = new QuanLiBanHangContext();
+        private readonly QuanLiBanHangContext _quanLiBanHangContext;
+
         public HomeController(ILogger<HomeController> logger,
             IProductRepository productRepository)
-        {
+        {          
             _logger = logger;
             _productRepository = productRepository;
         }
-
-     /*   public IActionResult findProductsByCategoryId(string id)
-        {
-            List<Product> products = _productRepository.findProductsByCategoryId(id);
-
-
-            return View(products);
-        }*/
-
-     /*   public IActionResult Index()
-        {
-            //1 . lay du lieu
-            List<Product> danhsachsanpham = _productDAO.getAllProduct();
-            //2. gui du lieu cho view
-
-            return View(danhsachsanpham);
-        }*/
-
 
 
         public IActionResult Index(int? page)
@@ -51,6 +37,19 @@ namespace BanHangOgani.Controllers
             ViewBag.TotalItems = danhsachsanpham.Count;
 
             return View(pagedData.ToList());
+        }
+
+        /*    public IActionResult CategoryMenu()
+            {
+                var categories = _quanLiBanHangContext.Categories.ToList();
+
+                return PartialView("_DropMenu", categories);
+            }*/
+
+        public IActionResult SanPhamTheoLoai(string categoryId)
+        {
+            List<Product> lstsanpham = db.Products.Where(x => x.CategoryId == categoryId).OrderBy(x => x.ProductName).ToList();
+            return View(lstsanpham);
         }
 
 

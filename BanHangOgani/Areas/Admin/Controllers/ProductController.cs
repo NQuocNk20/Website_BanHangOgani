@@ -48,6 +48,7 @@ namespace BanHangOgani.Areas.Admin.Controllers
             ViewBag.PageSize = pageSize;
             ViewBag.TotalItems = lst.Count;
 
+
             return View(pagedData.ToList());
         }
 

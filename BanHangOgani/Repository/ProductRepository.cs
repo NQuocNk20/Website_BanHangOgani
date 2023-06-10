@@ -63,7 +63,7 @@ namespace BanHangOgani.Repository
 
         public List<Product> GetAll()
         {
-            return _ctx.Products.ToList();
+            return _ctx.Products.Include(x => x.Category).ToList();
         }
 
         public Product findByID(string id)

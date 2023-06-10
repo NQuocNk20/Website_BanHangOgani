@@ -34,6 +34,7 @@
                 <th>Price</th>
                 @*<th>Category</th>*@
                 <th>Rate</th>       
+                <th>Category</th>       
                 <th>Action</th>
             </tr>
         </thead>
@@ -47,10 +48,10 @@
                     <td data-label='No'><span class="deactive"># @item.ProductId</span></td>
                     <td data-label='Name'>@item.ProductName</td>
                     <td data-label='Image'><img src="~/Images/@item.ProductImgPath" alt=""></td>
-         @*       <td data-label='Category'>Programming</td>*@
                     <td data-label='Description'>@item.ProductDescription</td>
                     <td data-label='Price'>$ @item.ProductPrice</td>
                     <td data-label='Rate'>@item.PorductRate</td>
+                    <td data-label='Category'><span class="cate">@item.Category.Ncategory</span></td>
                 <td data-label='Action'>
                     <div>
                             <a asp-action="EditProduct" asp-route-id="@item.ProductId">
