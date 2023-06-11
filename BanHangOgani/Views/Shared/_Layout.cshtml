@@ -56,6 +56,7 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
+                
                     <form class="d-flex" role="search">
                         <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn1 me-2 px-3" type="submit">Search</button>
@@ -198,63 +199,7 @@
         -->
     <section class="product bg-light">
         <div class="container">
-            <div class="row py-2 text-center">
-                <div class="col-lg-9 mx-auto">
-                    <p class="m-0">Green Agriculture</p>
-                    <h1>Our Best Products</h1>
-                    <div class="line my-4"></div>
-
-                  @*  <p>
-                        We call it ultimate because we simply believe every website We call it
-                        ultimate because we simply believe every website needs to be well presented at the
-                    </p>*@
-
-                  @*  <div class="row justify-content-center mt-5">
-                        <div class="col-6">
-                            <div class="dropdown custom-dropdown">
-                                <button class="btn btn-primary dropdown-toggle btnFilter" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Select a Product
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Product 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 3</a></li>
-                                    <li><a class="dropdown-item" href="#">Product 4</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>*@
-
-
-                </div>            
-
-                <div class="box col-lg-3 mt-5">
-                    <div class="dropdown">
-                        Category
-                        <span class="left-icon"></span>
-                        <span class="right-icon"></span>
-                        <div class="items">
-                            @foreach (var item in cateMenu.GetAll())
-                            {
-                                int index = cateMenu.GetAll().IndexOf(item) + 1;
-                                <a asp-controller="Home" asp-action="SanPhamTheoLoai" asp-route-categoryId="@item.CategoryId" style="--i:@index"><span></span>@item.Ncategory</a>
-                            }
-                        </div>
-                    </div>
-                </div>
-              
-
-
-                    <script>
-                        const dropdown = document.querySelector('.dropdown');
-
-                        dropdown.addEventListener('click', () => {
-                            dropdown.classList.toggle('active');
-                        })
-                    </script>
-
-
-            </div>
+          
 
             <div class="row my-4">
                @RenderBody();

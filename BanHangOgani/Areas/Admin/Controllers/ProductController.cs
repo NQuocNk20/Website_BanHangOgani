@@ -2,6 +2,8 @@
 using BanHangOgani.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Specialized;
 
 namespace BanHangOgani.Areas.Admin.Controllers
 {
@@ -11,6 +13,8 @@ namespace BanHangOgani.Areas.Admin.Controllers
         private IProductRepository _productRepository;
         private IProductBrandRepository _brandRepository;
         private ICategoryReposistory _categoryReposistory;
+
+        QuanLiBanHangContext banHangContext = new QuanLiBanHangContext();
 
         public ProductController(IProductRepository productRepository, IProductBrandRepository brandRepository,
             ICategoryReposistory categoryReposistory)
@@ -117,6 +121,26 @@ namespace BanHangOgani.Areas.Admin.Controllers
             return RedirectToAction("ViewAllProducts");
         }
 
-    
+
+        public IActionResult SearchProducts(string productName)
+        {
+
+            ViewBag.SearchMessage = "";
+
+            // Xử lý logic để tìm kiếm sản phẩm dựa trên tên
+
+            // Ví dụ: Lấy danh sách sản phẩm từ cơ sở dữ liệu dựa trên tên sản phẩm
+
+            var products = banHangContext.Products.Include(x => x.Category).Where(p => p.ProductName.Contains(productName)).ToList();
+
+            if (products.Count == 0)
+            {
+                ViewBag.SearchMessage = "Không tìm thấy sản phẩm.";
+            }
+
+            // Trả về view 'ViewProducts' với danh sách sản phẩm tìm được
+            return View("ViewAllProducts", products);
+        }
+
     }
 }

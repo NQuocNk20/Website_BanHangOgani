@@ -4,9 +4,82 @@
 @{
     ViewData["Title"] = "View All Products";
 }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 
 
 
+@*
+<div class="search">
+    <label>
+        <input type="text" placeholder="Search name here">
+        <ion-icon name="search-outline"></ion-icon>
+    </label>
+</div>*@
+
+
+
+<!-- Hiển thị danh sách sản phẩm -->
+@*<script>
+    @if (!string.IsNullOrEmpty(ViewBag.SearchMessage))
+    {
+        <text>
+        // Chuyển giá trị từ ViewBag.SearchMessage sang biến JavaScript
+        var searchMessage = "@Html.Raw(ViewBag.SearchMessage)";
+
+        // Hiển thị thông báo pop-up
+        alert(searchMessage);
+        </text>
+    }
+</script>*@
+
+<script>
+    @if (!string.IsNullOrEmpty(ViewBag.SearchMessage))
+    {
+        <text>
+        // Chuyển giá trị từ ViewBag.SearchMessage sang biến JavaScript
+        var searchMessage = "@Html.Raw(ViewBag.SearchMessage)";
+
+        // Hiển thị thông báo pop-up
+        Swal.fire({
+            icon: 'info',
+            title: 'Thông báo',
+            text: searchMessage
+        });
+        </text>
+    }
+</script>
+
+@*
+<div id="popup" class="popup">
+    <span class="close">&times;</span>
+    <div class="popup-content">
+        <p>@ViewBag.SearchMessage</p>
+    </div>
+</div>
+
+
+<script>
+    @if (!string.IsNullOrEmpty(ViewBag.SearchMessage))
+    {
+        <text>
+            // Hiển thị popup
+            document.getElementById("popup").style.display = "block";
+        </text>
+    }
+</script>
+*@
+
+
+<div class="search">
+    <form action="@Url.Action("SearchProducts", "Product")" method="get">
+        <label>
+            <input type="text" name="productName" placeholder="Search name here">
+            <ion-icon name="search-outline"></ion-icon>
+        </label>
+       @* <input type="submit">*@
+    </form>
+</div>
 
     <a asp-action="CreateProduct" style="margin: 40px 0 0 30px">
         <button>
@@ -16,9 +89,6 @@
             </svg>
         </button>
     </a>
-
-
-
 
 
 <p>@TempData["Message"]</p>
@@ -52,6 +122,14 @@
                     <td data-label='Price'>$ @item.ProductPrice</td>
                     <td data-label='Rate'>@item.PorductRate</td>
                     <td data-label='Category'><span class="cate">@item.Category.Ncategory</span></td>
+                  @*  <td data-label='Category'>
+
+                            @if (item.Category != null)
+                            {
+                                <span class="cate">@item.Category.Ncategory</span>
+                            }
+                        
+                     </td>*@
                 <td data-label='Action'>
                     <div>
                             <a asp-action="EditProduct" asp-route-id="@item.ProductId">
@@ -74,7 +152,7 @@
 </div>
 
 
- 
+
 
 
 <!-- Phân trang -->

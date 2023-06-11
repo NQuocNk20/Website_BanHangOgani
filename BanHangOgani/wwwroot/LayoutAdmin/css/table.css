@@ -93,11 +93,19 @@ th, td {
 th {
     font-size: 20px;
     font-weight: 600;
-    background-color: rgb(174,224,224);
+    background-color: rgba(178,0,255, 0.3);
+    color: aliceblue;
 }
+    table tr {
+        transition: .25s;
+    }
+        table tr:hover {
+            background: rgba(178,0,255, 0.3);
+            background: rgb(223,223,217);
+        }
 
 tr.tr1 {
-    /* From https://css.glass */
+
     background: rgba(236, 232, 235, 0.12);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -111,28 +119,41 @@ tr.tr2 {
 }
 
 td span {
-    background-color: #32de84;
+    background-color: rgb(174,224,224);
     font-size: 16px;
     padding: 10px;
-    color: #fff;
+    color: aliceblue;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: 700;
+    transition: .25s;
 }
 
     td span.deactive {
         background-color: rgb(230,111,81);
+        transition: .25s;
     }
 
     td span.cate {
-        background-color: #ffbe0b;
+        background-color: #0094ff;
+        transition: .25s;
     }
 
     td span.delete {
-        background-color: #FF003F;
+        background-color: rgb(230,111,81);
+        transition: .25s;
     }
 
+
+    table tr:hover td span.deactive {
+        background: #ffbe0b;
+    }
+
+
+
+
 td img {
-    width: 50px;
+    width: 70px;
     height: 50px;
 }
 

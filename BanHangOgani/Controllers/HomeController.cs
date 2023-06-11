@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using BanHangOgani.Repository;
+using BanHangOgani.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BanHangOgani.Controllers
@@ -13,7 +14,7 @@ namespace BanHangOgani.Controllers
         private IProductRepository _productRepository;
 
         QuanLiBanHangContext db = new QuanLiBanHangContext();
-        private readonly QuanLiBanHangContext _quanLiBanHangContext;
+ 
 
         public HomeController(ILogger<HomeController> logger,
             IProductRepository productRepository)
@@ -64,5 +65,26 @@ namespace BanHangOgani.Controllers
         {
             return View(new Models.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult ChiTietSanPham(string productId)
+        {
+            var sanPham = db.Products.Include(x => x.Category).SingleOrDefault(x => x.ProductId == productId);
+            return View(sanPham);
+        }
+
+   /*     public IActionResult ProductDetail(string productId)
+        {*/
+            // Lấy thông tin chi tiết sản phẩm từ cơ sở dữ liệu dựa trên ID
+            /*var product = db.Products.SingleOrDefault(x => x.ProductId == productId);
+
+            var HomeProductDetailViewModel = new HomeProductDetailViewModel
+            {
+                Product = product
+            };*/
+
+            // Trả về view 'ProductDetail' với thông tin chi tiết sản phẩm
+   /*         return View();
+        }*/
     }
 }

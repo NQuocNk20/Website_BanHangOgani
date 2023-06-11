@@ -1,0 +1,97 @@
+﻿@model BanHangOgani.Models.Product
+
+@{
+    ViewData["Title"] = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--
+  - #==========================/ Detail Product /==========================#
+  -->
+  <h1 class="text-center">Product Detail</h1>
+<div class="w-10 line my-4"></div>
+<section class="product-details py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 img-right p-0">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item" src="~/Images/@Model.ProductImgPath" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Model.ProductName</h3>
+                    <div class="product__details__rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <span>(18 reviews)</span>
+                    </div>
+                    <div class="product__details__price">$ @Model.ProductPrice</div>
+                    <div class="des-item">
+                        <p>
+                           @* Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
+                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
+                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.*@
+                            @Model.ProductDescription
+                        </p>
+                    </div>
+                    <form class="d-flex">
+                        <div class="form-group">
+                            <label for="quantity">Số lượng:</label>
+                            <button type="button" class="btn btn-custom" onclick="decreaseQuantity()">-</button>
+                            <input class="text-center" type="number" id="quantity" name="quantity" value="0"
+                                   readonly>
+                            <button type="button" class="btn btn-custom" onclick="increaseQuantity()">+</button>
+                        </div>
+
+                        <a href="#" class="primary-btn btnAdd">ADD TO CARD</a>
+                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                    </form>
+
+                    <script>
+                        var quantityInput = document.getElementById('quantity');
+
+                        function decreaseQuantity() {
+                            var currentQuantity = parseInt(quantityInput.value);
+                            if (currentQuantity > 0) {
+                                quantityInput.value = currentQuantity - 1;
+                            }
+                        }
+
+                        function increaseQuantity() {
+                            var currentQuantity = parseInt(quantityInput.value);
+                            quantityInput.value = currentQuantity + 1;
+                        }
+                    </script>
+                    <div>
+                        <ul>
+                            <li><b>Category</b> <span>@Model.Category.Ncategory</span></li>
+                            <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
+                            <li><b>Weight</b> <span>0.5 kg</span></li>
+                            <li>
+                                <b>Share on</b>
+                                <div class="share">
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-messenger"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-pinterest"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

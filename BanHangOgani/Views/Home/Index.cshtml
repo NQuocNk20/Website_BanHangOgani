@@ -4,26 +4,97 @@
 }
 
 @model List<Product>
-@foreach(var item in Model)
+@inject ICategoryReposistory cateMenu
+
+      <div class="row py-2 text-center">
+                <div class="col-lg-9 mx-auto">
+                    <p class="m-0">Green Agriculture</p>
+                    <h1>Our Best Products</h1>
+                    <div class="line my-4"></div>
+
+                  @*  <p>
+                        We call it ultimate because we simply believe every website We call it
+                        ultimate because we simply believe every website needs to be well presented at the
+                    </p>*@
+
+                  @*  <div class="row justify-content-center mt-5">
+                        <div class="col-6">
+                            <div class="dropdown custom-dropdown">
+                                <button class="btn btn-primary dropdown-toggle btnFilter" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Select a Product
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Product 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Product 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Product 3</a></li>
+                                    <li><a class="dropdown-item" href="#">Product 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>*@
+
+
+                </div>            
+
+                <div class="box col-lg-3 mt-5">
+                    <div class="dropdown">
+                        Category
+                        <span class="left-icon"></span>
+                        <span class="right-icon"></span>
+                        <div class="items">
+                            @foreach (var item in cateMenu.GetAll())
+                            {
+                                int index = cateMenu.GetAll().IndexOf(item) + 1;
+                                <a asp-controller="Home" asp-action="SanPhamTheoLoai" asp-route-categoryId="@item.CategoryId" style="--i:@index"><span></span>@item.Ncategory</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+              
+
+
+                    <script>
+                        const dropdown = document.querySelector('.dropdown');
+
+                        dropdown.addEventListener('click', () => {
+                            dropdown.classList.toggle('active');
+                        })
+                    </script>
+
+
+            </div>
+
+    @foreach(var item in Model)
 {
     <div class="col-lg-3 mt-3">
-        <div class="card">
-            <div class="card-header">     
-                <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
-            </div>
-            <div class="card-body">
-                <div class="line"></div>
-                <h4 class="pt-2">@item.ProductName</h4>
-                <div class="start">
-                    <p>Rate:<span> @item.PorductRate</span></p>
+       @* <a asp-action="ProductDetail" asp-controller="Home">*@
+            <div class="card">
+                <div class="card-header">     
+                    <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
                 </div>
-                <h3>Price:$ @item.ProductPrice</h3>
-                <button class="btnc my-3">ADD TO CART</button>
+                <div class="card-body">
+                    <div class="line"></div>
+                    <h4 class="pt-2">
+                        <a asp-controller="Home" asp-action="ChiTietSanPham" asp-route-productId="@item.ProductId">
+                            @item.ProductName
+                        </a>
+                    </h4>
+                    <div class="start">
+                        <p>Rate:<span> @item.PorductRate</span></p>
+                    </div>
+                    <h3>Price:$ @item.ProductPrice</h3>
+                    <button class="btnc my-3">ADD TO CART</button>
+                </div>
             </div>
-        </div>
+   @*     </a>*@
     </div>
+}
 
-  @*  <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+
+
+
+
+@*  <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
         <div class="featured__item">
             <div class="featured__item__pic set-bg" data-setbg="@Url.Content("../Images/" + item.ProductImgPath)">
                 <ul class="featured__item__pic__hover">
@@ -39,12 +110,6 @@
             </div>
         </div>
     </div>*@
-
-
-}
-
-
-
 
 
 <!-- Phân trang -->
