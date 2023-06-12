@@ -17,7 +17,7 @@ public partial class Product
 
     public string? ProductDiscount { get; set; }
 
-    public decimal? PorductRate { get; set; }
+    public double? PorductRate { get; set; }
 
     public string? ProductImgPath { get; set; }
 

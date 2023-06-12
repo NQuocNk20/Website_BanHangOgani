@@ -39,7 +39,7 @@ public partial class QuanLiBanHangContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-84NQEPG\\SQLEXPRESS;uid=sa;password=1;database=QuanLiBanHang;Encrypt=true;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("Server=.;uid=sa;password=1;database=QuanLiBanHang;Encrypt=true;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -231,7 +231,6 @@ public partial class QuanLiBanHangContext : DbContext
             entity.Property(e => e.ImgPhoto)
                 .HasColumnType("image")
                 .HasColumnName("imgPhoto");
-            entity.Property(e => e.PorductRate).HasColumnType("decimal(18, 0)");
             entity.Property(e => e.PorductVideo).HasMaxLength(255);
             entity.Property(e => e.ProductDescription).HasMaxLength(255);
             entity.Property(e => e.ProductDiscount)
@@ -240,7 +239,7 @@ public partial class QuanLiBanHangContext : DbContext
                 .IsFixedLength();
             entity.Property(e => e.ProductImgPath).HasMaxLength(255);
             entity.Property(e => e.ProductName).HasMaxLength(255);
-            entity.Property(e => e.ProductPrice).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.ProductPrice).HasColumnType("decimal(18, 3)");
             entity.Property(e => e.SupplierId)
                 .HasMaxLength(6)
                 .IsUnicode(false)
