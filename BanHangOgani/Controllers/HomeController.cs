@@ -4,6 +4,7 @@ using System.Diagnostics;
 using BanHangOgani.Repository;
 using BanHangOgani.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using BanHangOgani.Models.Authentication;
 
 namespace BanHangOgani.Controllers
 {
@@ -23,7 +24,7 @@ namespace BanHangOgani.Controllers
             _productRepository = productRepository;
         }
 
-
+        [Authentication]
         public IActionResult Index(int? page)
         {
             int pageNumber = page ?? 1;
@@ -46,7 +47,7 @@ namespace BanHangOgani.Controllers
 
                 return PartialView("_DropMenu", categories);
             }*/
-
+   
         public IActionResult SanPhamTheoLoai(string categoryId)
         {
             List<Product> lstsanpham = db.Products.Where(x => x.CategoryId == categoryId).OrderBy(x => x.ProductName).ToList();

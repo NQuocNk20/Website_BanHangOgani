@@ -17,10 +17,12 @@ builder.Services.AddDbContext<QuanLiBanHangContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("QuanLiBanHangDB"));
 
 });
+
 //DI
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<ICategoryReposistory, CategoryReposistory>();
 builder.Services.AddTransient<IProductBrandRepository, ProductBrandRepository>();
+builder.Services.AddSession();
 
 
 var app = builder.Build();
@@ -29,12 +31,17 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+
+    app.UseHsts();
 }
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
+
 app.MapAreaControllerRoute(
      name: "MyAreas",
      areaName: "Admin",
@@ -45,6 +52,6 @@ app.MapAreaControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Access}/{action=Login}/{id?}");
 
 app.Run();

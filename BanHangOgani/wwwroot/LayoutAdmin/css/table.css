@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --motion-ease: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     --motion-duration: 0.3s;
 }
@@ -149,6 +149,16 @@ td span {
         background: #ffbe0b;
     }
 
+
+/*.col-custom,
+.text-limit {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;*/ /* Số dòng muốn hiển thị */
+    /*-webkit-box-orient: vertical;
+}*/
 
 
 

@@ -231,7 +231,7 @@ public partial class QuanLiBanHangContext : DbContext
             entity.Property(e => e.ImgPhoto)
                 .HasColumnType("image")
                 .HasColumnName("imgPhoto");
-            entity.Property(e => e.PorductRate).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.PorductRate).HasColumnType("decimal(18, 1)");
             entity.Property(e => e.PorductVideo).HasMaxLength(255);
             entity.Property(e => e.ProductDescription).HasMaxLength(255);
             entity.Property(e => e.ProductDiscount)
@@ -240,7 +240,7 @@ public partial class QuanLiBanHangContext : DbContext
                 .IsFixedLength();
             entity.Property(e => e.ProductImgPath).HasMaxLength(255);
             entity.Property(e => e.ProductName).HasMaxLength(255);
-            entity.Property(e => e.ProductPrice).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.ProductPrice).HasColumnType("decimal(18, 3)");
             entity.Property(e => e.SupplierId)
                 .HasMaxLength(6)
                 .IsUnicode(false)
