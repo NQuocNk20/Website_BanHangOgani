@@ -12,6 +12,7 @@
 {
 
     <div class="col-lg-3 mt-3">
+<<<<<<< HEAD
             <div class="card">
                 <div class="card-header">
                     <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
@@ -29,6 +30,25 @@
                     <h3>Price:$ @item.ProductPrice</h3>
                     <button class="btnc my-3">ADD TO CART</button>
                 </div>
+=======
+             <div class="card">
+            <div class="card-header">     
+                <img src="~/Images/@item.ProductImgPath" class="img-fuild" alt="">
+            </div>
+            <div class="card-body">
+                <div class="line"></div>
+                <h4 class="pt-2">
+                    <a asp-action="ChiTietSanPham" asp-route-productId="@item.ProductId">
+                            @item.ProductName
+                        </a>
+                   
+                    </h4>
+                <div class="start">
+                    <p>Rate:<span> @item.PorductRate</span></p>
+                </div>
+                <h3>Price: @item.ProductPrice VND</h3>
+                <button class="btnc my-3">ADD TO CART</button>
+>>>>>>> 6da44289e85fc7b10d4c0d63b6f6e5c45d0bd42f
             </div>
        
     </div>
