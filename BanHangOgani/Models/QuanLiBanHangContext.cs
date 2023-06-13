@@ -39,7 +39,7 @@ public partial class QuanLiBanHangContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.;uid=sa;password=1;database=QuanLiBanHang;Encrypt=true;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-84NQEPG\\SQLEXPRESS;uid=sa;password=1;database=QuanLiBanHang;Encrypt=true;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -231,10 +231,7 @@ public partial class QuanLiBanHangContext : DbContext
             entity.Property(e => e.ImgPhoto)
                 .HasColumnType("image")
                 .HasColumnName("imgPhoto");
-<<<<<<< HEAD
             entity.Property(e => e.PorductRate).HasColumnType("decimal(18, 1)");
-=======
->>>>>>> 6da44289e85fc7b10d4c0d63b6f6e5c45d0bd42f
             entity.Property(e => e.PorductVideo).HasMaxLength(255);
             entity.Property(e => e.ProductDescription).HasMaxLength(255);
             entity.Property(e => e.ProductDiscount)
