@@ -83,7 +83,10 @@
                         <p>Rate:<span> @item.PorductRate</span></p>
                     </div>
                       <h3>Price: @item.ProductPrice VND</h3>
-                    <button class="btnc my-3">ADD TO CART</button>
+                    
+                    <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.ProductId" style="text-decoration: none">
+                        <button class="btnc my-3">ADD TO </button>
+                    </a>
                 </div>
             </div>
    @*     </a>*@

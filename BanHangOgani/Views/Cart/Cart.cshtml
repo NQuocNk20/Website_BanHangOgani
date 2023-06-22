@@ -1,0 +1,220 @@
+﻿@model CartModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body class="">
+
+    <section id="blog-home" class="pt-5 mt05 container">
+        <h2 class="font-weight-bold-pt-5">Shopping Cart</h2>
+    </section>
+
+    <section id="cart-container" class="container my-5">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.getAllItems())
+                {
+                    <tr>
+                        <td><a href="#">Xoa</a></td>
+                        <td><img src="~/Images/@item.ImagePath"></td>
+                        <td>
+                            <h5>@item.Name</h5>
+                        </td>
+                        <td><h5>$ @item.Price</h5></td>
+                        <td class="product-quantity">
+                            @using (Html.BeginForm("UpdateQuantity", "cart", FormMethod.Post))
+                            {
+                                <div class="quantity buttons_added">
+                                    @Html.HiddenFor(m=>item.Id)
+                                    <input type="submit" class="minus" value="-" , name="btnUpdateQuantity" style="width: 50px; text-align:center;">
+                                    @*<input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">*@
+                                    @Html.TextBoxFor(m=>item.Quantity, "",new{@class="input-text qty text", @type="number"})
+                                    <input type="submit" class="plus" value="+" , name="btnUpdateQuantity" style="width: 50px; text-align:center;">
+                                </div>
+                            }
+                        </td>
+                        <td><h5>$ @item.lineTotal</h5></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-bottom" class="container">
+        <div class="row">
+            <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
+                <div>
+                    <h5>COUPON</h5>
+                    <P>Enter your coupon code if you have one</P>
+                    <input class="ipt-long" type="text" placeholder="Coupon Code">
+                    <button class="btnShop">APPLY COUPON</button>
+                </div>
+            </div>
+            <div class="total col-lg-6 col-md-6 col-12">
+                <div>
+                    <h5>Cart Total</h5>
+                    <div class="d-flex justify-content-between">
+                        <h6>Subtotal</h6>
+                        <p>$ @Model.getTotal()</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6>Shipping</h6>
+                        <p>$ 250.000</p>
+                    </div>
+                    <hr class="second-hr">
+                    <div class="d-flex justify-content-between">
+                        <h6>Total</h6>
+                        <p>$ @Model.getTotal()</p>
+                    </div>
+
+                    <div class="btn-total">
+                        <button class="ml-auto btnShop">PROCEED TO CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <a asp-controller="home" asp-action="Index">Back to List</a>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*---------------------
+          Shop Cart
+        -----------------------*/
+        #cart-container {
+            overflow-x: auto;
+        }
+
+            #cart-container table {
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
+                white-space: nowrap;
+            }
+
+                #cart-container table thead {
+                    font-weight: 700;
+                }
+
+                    #cart-container table thead td {
+                        background: #6c8d3a;
+                        color: #fff;
+                        border: none;
+                        padding: 6px 0;
+                    }
+
+                #cart-container table td {
+                    border: 1px solid #b6b3b3;
+                    text-align: center;
+                }
+
+                    #cart-container table td:nth-child(1) {
+                        width: 100px;
+                    }
+
+                    #cart-container table td:nth-child(2),
+                    #cart-container table td:nth-child(3) {
+                        width: 200px;
+                    }
+
+                    #cart-container table td:nth-child(4),
+                    #cart-container table td:nth-child(5),
+                    #cart-container table td:nth-child(6) {
+                        width: 170px;
+                    }
+
+                #cart-container table tbody img {
+                    width: 100px;
+                    height: 80px;
+                    object-fit: cover;
+                }
+
+        #cart-bottom .coupon > div,
+        #cart-bottom .total > div {
+            border: 1px solid #b6b3b3;
+        }
+
+        #cart-bottom .coupon h5,
+        #cart-bottom .total h5 {
+            background: #6c8d3a;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            font-weight: 700;
+        }
+
+        #cart-bottom .coupon p,
+        #cart-bottom .coupon input {
+            padding: 0 12px;
+        }
+
+        #cart-bottom .coupon input {
+            height: 44px;
+        }
+
+        #cart-bottom .coupon input,
+        #cart-bottom .coupon button {
+            margin: 0 0 20px 12px;
+        }
+
+        #cart-bottom .total div > div {
+            padding: 0 12px;
+        }
+
+        #cart-bottom .total h6 {
+            color: #2a2a2a;
+        }
+
+        .second-hr {
+            background: #b8b8b8;
+            width: 100%;
+            height: 1px;
+        }
+
+        #cart-bottom .total .btn-total {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .btnShop {
+            padding: 7px;
+            background: #2a2a2a;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .ipt-long {
+            width: 65%;
+        }
+
+        .input-text {
+            width: 60px;
+        }
+    </style>
+</body>
+</html>

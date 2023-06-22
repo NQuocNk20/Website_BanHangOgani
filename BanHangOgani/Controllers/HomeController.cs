@@ -73,19 +73,5 @@ namespace BanHangOgani.Controllers
             var sanPham = db.Products.Include(x => x.Category).SingleOrDefault(x => x.ProductId == productId);
             return View(sanPham);
         }
-
-   /*     public IActionResult ProductDetail(string productId)
-        {*/
-            // Lấy thông tin chi tiết sản phẩm từ cơ sở dữ liệu dựa trên ID
-            /*var product = db.Products.SingleOrDefault(x => x.ProductId == productId);
-
-            var HomeProductDetailViewModel = new HomeProductDetailViewModel
-            {
-                Product = product
-            };*/
-
-            // Trả về view 'ProductDetail' với thông tin chi tiết sản phẩm
-   /*         return View();
-        }*/
     }
 }
