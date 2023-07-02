@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BanHangOgani", "BanHangOgani\BanHangOgani.csproj", "{2C464A46-F348-45D3-BD5A-2B16BE9E3FF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shop", "G:\download_chrome\BT\tuyendung\shop\shop.csproj", "{92EC0C1B-FACE-4419-BE04-FD3124F28AA1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{2C464A46-F348-45D3-BD5A-2B16BE9E3FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C464A46-F348-45D3-BD5A-2B16BE9E3FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C464A46-F348-45D3-BD5A-2B16BE9E3FF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92EC0C1B-FACE-4419-BE04-FD3124F28AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92EC0C1B-FACE-4419-BE04-FD3124F28AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92EC0C1B-FACE-4419-BE04-FD3124F28AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92EC0C1B-FACE-4419-BE04-FD3124F28AA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
