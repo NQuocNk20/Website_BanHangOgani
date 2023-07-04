@@ -1,4 +1,8 @@
-﻿@inject ICategoryReposistory cateMenu
+﻿@using BanHangOgani.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject ICategoryReposistory cateMenu
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <html lang="en">
 
@@ -62,7 +66,35 @@
                         <button class="btn1 me-2 px-3" type="submit">Search</button>
                         <span><i class="bi bi-basket2-fill"></i></span>
                     </form>
-                    <a asp-controller="Access" asp-action="Logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                   @* <a asp-controller="Access" asp-action="Logout"><i class="bi bi-box-arrow-right"></i> Logout</a>*@
+                    <p class="title" style="margin-left: 30px">
+                            @UserManager.GetUserName(User)
+                     </p>
+                   
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <a href="/Identity/Account/Login" style="margin-left: 20px">
+                            @*  <span class="icon">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </span>*@
+                            <span class="title">Login</span>
+                        </a>
+                        <a href="/Identity/Account/Register" style="margin-left: 20px;display:inline-block">
+                            @* <span class="icon">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </span>*@
+                            <span class="title">sign up</span>
+                        </a>
+                    }
+                       @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a href="/Home/Logout" style="margin-left: 20px;display:inline-block">
+                             <span class="icon">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </span>
+                            <span class="title">Log out</span>
+                        </a>
+                    }
                 </div>
             </div>
         </nav>

@@ -1,4 +1,8 @@
-﻿@{
+﻿@using BanHangOgani.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -83,11 +87,13 @@
                         <p>Rate:<span> @item.PorductRate</span></p>
                     </div>
                       <h3>Price: @item.ProductPrice VND</h3>
-                    
+             @*   @if (SignInManager.IsSignedIn(User))
+                {*@
                     <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.ProductId" style="text-decoration: none">
-                        <button class="btnc my-3">ADD TO </button>
+                        <button class="btnc my-3">ADD TO Cart</button>
                     </a>
-                </div>
+                @*}*@
+            </div>
             </div>
    @*     </a>*@
     </div>

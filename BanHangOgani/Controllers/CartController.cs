@@ -70,17 +70,32 @@ namespace BanHangOgani.Controllers
             HttpContext.Session.Set<List<Item>>("cart", cartModel.getAllItems());
             return RedirectToAction("Cart");
         }
+        
         public ActionResult Checkout()
         {
-            List<Item>? items = HttpContext.Session.Get<List<Item>>("cart");
+           /* List<Item>? items = HttpContext.Session.Get<List<Item>>("cart");
             // 1 => shoppingcart
             // 2 => insert order
             foreach (var item in items)
             {
 
                 // 3 => insert orderdetails
+            }*/
+            return View("Checkout");
+        }
+
+        public IActionResult RemoveItem(string id)
+        {
+            CartModel cartModel = null;
+            if (HttpContext.Session.Get<List<Item>>("cart") != null)
+            {
+                cartModel = new CartModel();
+                cartModel.CartId = HttpContext.Session.Id;
+                cartModel.setAllItems(HttpContext.Session.Get<List<Item>>("cart"));
             }
-            return View();
+            cartModel.RemoveItem(id);
+            HttpContext.Session.Set<List<Item>>("cart", cartModel.getAllItems());
+            return RedirectToAction("Cart");
         }
     }
 }

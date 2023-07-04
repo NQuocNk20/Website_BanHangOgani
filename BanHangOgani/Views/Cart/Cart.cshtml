@@ -1,4 +1,8 @@
-﻿@model CartModel
+﻿@using BanHangOgani.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model CartModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +37,7 @@
                 @foreach (var item in Model.getAllItems())
                 {
                     <tr>
-                        <td><a href="#">Xoa</a></td>
+                        <td> <a href="@Url.Action("RemoveItem", "Cart", new { id = item.Id })">Remove</a></td>
                         <td><img src="~/Images/@item.ImagePath"></td>
                         <td>
                             <h5>@item.Name</h5>
@@ -85,9 +89,14 @@
                         <p>$ @Model.getTotal()</p>
                     </div>
 
-                    <div class="btn-total">
-                        <button class="ml-auto btnShop">PROCEED TO CHECKOUT</button>
-                    </div>
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <a asp-controller="cart" asp-action="Checkout">
+                        <div class="btn-total">
+                            <button class="ml-auto btnShop">PROCEED TO CHECKOUT</button>
+                        </div>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

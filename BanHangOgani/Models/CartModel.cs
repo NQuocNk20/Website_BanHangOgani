@@ -61,5 +61,16 @@ namespace BanHangOgani.Models
         {
             _items = items;
         }
+
+        public void RemoveItem(string id)
+        {
+            Item itemToRemove = _items.FirstOrDefault(item => item.Id == id);
+            if (itemToRemove != null)
+            {
+                _items.Remove(itemToRemove);
+            }
+        }
     }
+
+
 }

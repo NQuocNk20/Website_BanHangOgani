@@ -1,4 +1,8 @@
 ﻿@*@model BanHangOgani.Models.Product*@
+@using BanHangOgani.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 <!DOCTYPE html>
         <html lang="en">
 
@@ -25,7 +29,9 @@
                                 <span class="icon">
                                     <ion-icon name="storefront-outline"></ion-icon>
                                 </span>
-                                <h2 class="title">Admin</h2>
+                        <h2 class="title">
+                            @UserManager.GetUserName(User)
+                        </h2>
                             </a>
                         </li>
 
@@ -84,7 +90,7 @@
                         </li>
 
                         <li>
-                            <a>
+                            <a href="/admin/dashboard/logout">
                                 <span class="icon">
                                     <ion-icon name="log-out-outline"></ion-icon>
                                 </span>

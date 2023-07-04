@@ -4,7 +4,8 @@ using System.Diagnostics;
 using BanHangOgani.Repository;
 using BanHangOgani.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using BanHangOgani.Models.Authentication;
+using Microsoft.AspNetCore.Identity;
+using BanHangOgani.Areas.Identity.Data;
 
 namespace BanHangOgani.Controllers
 {
@@ -13,18 +14,20 @@ namespace BanHangOgani.Controllers
         private readonly ILogger<HomeController> _logger;
         private ProductDAO _productDAO = new ProductDAO();
         private IProductRepository _productRepository;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
         QuanLiBanHangContext db = new QuanLiBanHangContext();
  
 
         public HomeController(ILogger<HomeController> logger,
-            IProductRepository productRepository)
+            IProductRepository productRepository,
+             SignInManager<ApplicationUser> signInManager)
         {          
             _logger = logger;
             _productRepository = productRepository;
+            _signInManager = signInManager;
         }
 
-        [Authentication]
         public IActionResult Index(int? page)
         {
             int pageNumber = page ?? 1;
@@ -72,6 +75,11 @@ namespace BanHangOgani.Controllers
         {
             var sanPham = db.Products.Include(x => x.Category).SingleOrDefault(x => x.ProductId == productId);
             return View(sanPham);
+        }
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync();
+            return LocalRedirect("/Home/Index");
         }
     }
 }
